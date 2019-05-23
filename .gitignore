@@ -1,0 +1,12 @@
+*~
+*.swp
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/captures
+.externalNativeBuild
+gradle.properties
+.idea/
+build/
+app/app-release.apk
