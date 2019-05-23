@@ -8,13 +8,13 @@ class BoxInfoTest {
 
     @Test
     fun testBoxInfo() {
-        val ekamBoxInfo = BoxInfo("ddd", "sss", "rrr",
+        val boxInfo = BoxInfo("ddd", "sss", "rrr",
                 listOf(ScannerInfo("ppp", "www", DeviceType.SCANNER, "qqq"),
                         ScaleInfo("ppp", "www", DeviceType.LIBRA, "qqq"),
                         ScaleUsbInfo("ppp", "www", DeviceType.LIBRAUSB, "qqq"),
                         EscposPrinterInfo("ppp", "www", DeviceType.ESCPOS_PRINTER, "qqq"),
                         AcquiringInfo("ppp", "www", DeviceType.ACQUIRE, "qqq"),
-                        FiscalDeviceInfo("ppp", "www", DeviceType.PRINTER, "qqq", FiscalPrinterType.ATOL,
+                        FiscalDeviceInfo("ppp", "www", DeviceType.PRINTER, "qqq", PrinterType.ATOL,
                                 70, "ooo", "nnn", "fff", "zzz")))
         val adapterFactory = RuntimeTypeAdapterFactory.of(DeviceInfo::class.java, "deviceTypeId")
                 .registerSubtype(FiscalDeviceInfo::class.java, "1")
@@ -25,9 +25,9 @@ class BoxInfoTest {
                 .registerSubtype(EscposPrinterInfo::class.java, "6")
 
         val gson = GsonBuilder().registerSerializers().registerTypeAdapterFactory(adapterFactory).create()
-        val json = gson.toJson(ekamBoxInfo)
+        val json = gson.toJson(boxInfo)
         val resultBoxInfo = gson.fromJson<BoxInfo>(json, BoxInfo::class.java)
         print("$json\n")
-        assert(ekamBoxInfo == resultEkamBoxInfo)
+        assert(boxInfo == resultBoxInfo)
     }
 }

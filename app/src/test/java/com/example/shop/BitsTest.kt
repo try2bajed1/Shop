@@ -1,13 +1,11 @@
-package ekam.insales.ru
+package com.example.shop
 
+import com.example.shop.utils.bitNumbers
+import com.example.shop.utils.isPowerOfTwo
 import junit.framework.Assert.assertFalse
 import junit.framework.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import ru.insales.ekam.utils.bitNumbers
-import ru.insales.ekam.utils.isPowerOfTwo
-
 
 @RunWith(RobolectricTestRunner::class)
 class BitsTest {

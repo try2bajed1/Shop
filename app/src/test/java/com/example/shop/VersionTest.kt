@@ -19,7 +19,7 @@ import org.junit.runners.JUnit4
 class VersionTest {
 
     @Test
-    fun testEkamBoxVersion() {
+    fun testBoxVersion() {
         Assert.assertTrue(Version("1.4").isLowerThan("999.1.889-g31b5783"))
         Assert.assertTrue(Version("1.4").isLowerThan("1.4.1"))
         Assert.assertTrue(Version("1.5").isHigherThan("1.4.1"))
